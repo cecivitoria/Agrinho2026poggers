@@ -1,0 +1,81 @@
+:root {
+    --primary: #1b4332;
+    --accent: #d4a373;
+    --bg: #f8f9fa;
+    --text: #2b2d42;
+}
+
+/* Configurações de Dark Mode controladas pelo JS */
+body.dark-mode {
+    --bg: #1a1a1a;
+    --text: #f8f9fa;
+    background-color: var(--bg);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    transition: 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1530836361253-efad5cb2fe28?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.section-title { text-align: center; padding: 40px 0; }
+.divider { width: 60px; height: 4px; background: var(--accent); margin: 10px auto; }
+
+.content-box { display: flex; gap: 40px; padding: 0 10%; align-items: center; }
+.image-side img { width: 100%; border-radius: 15px; }
+
+.calc-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .calc-container { background: #333; }
+
+input { padding: 12px; width: 80%; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
+button { padding: 12px 25px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer; }
+
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .content-box { flex-direction: column; }
+}
